@@ -13,6 +13,16 @@ import imgCarrossel5 from "@/assets/img_principal_carrossel_5.png";
 import imgCarrossel6 from "@/assets/img_principal_carrossel_6.png";
 import imgCarrossel7 from "@/assets/img_principal_carrossel_7.png";
 import imgCarrossel8 from "@/assets/img_principal_carrossel_8.png";
+import mesaDigitalizadora from "@/assets/mesa_digitalizadora.png";
+import logo1 from "@/assets/Logo_1.png";
+import logo2 from "@/assets/Logo_2.png";
+import logo3 from "@/assets/Logo_3.png";
+import logo4 from "@/assets/Logo_4.png";
+import logo5 from "@/assets/Logo_5.png";
+import logo6 from "@/assets/Logo_6.png";
+import logo7 from "@/assets/Logo_7.png";
+import logo8 from "@/assets/Logo_8.png";
+import logo9 from "@/assets/Logo_9.png";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,10 +38,17 @@ const Home = () => {
     image: img,
   }));
 
-  const clientLogos = Array.from({ length: 9 }, (_, i) => ({
-    id: i + 1,
-    image: `Logo ${i + 1}.png`,
-  }));
+  const clientLogos = [
+    { id: 1, image: logo1 },
+    { id: 2, image: logo2 },
+    { id: 3, image: logo3 },
+    { id: 4, image: logo4 },
+    { id: 5, image: logo5 },
+    { id: 6, image: logo6 },
+    { id: 7, image: logo7 },
+    { id: 8, image: logo8 },
+    { id: 9, image: logo9 },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -169,8 +186,8 @@ const Home = () => {
             </div>
 
             <div className="relative">
-              <div className="aspect-[777/457] bg-gradient-to-br from-background/20 to-background/40 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20">
-                <span className="text-white/70 text-center px-4">mesa_digitalizadora.png</span>
+              <div className="aspect-[777/457] rounded-2xl overflow-hidden border border-white/20">
+                <img src={mesaDigitalizadora} alt="Mesa Digitalizadora" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -183,11 +200,7 @@ const Home = () => {
                 key={logo.id}
                 className="glass-card p-6 flex items-center justify-center hover-scale hover-glow"
               >
-                <div className="w-full h-[172px] bg-gradient-to-br from-primary/10 to-secondary/10 rounded flex items-center justify-center">
-                  <span className="text-xs text-muted-foreground text-center">
-                    {logo.image}
-                  </span>
-                </div>
+                <img src={logo.image} alt={`Cliente ${logo.id}`} className="w-full h-[172px] object-contain" />
               </div>
             ))}
           </div>
