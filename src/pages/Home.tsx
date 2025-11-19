@@ -4,13 +4,28 @@ import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import GradientButton from "@/components/GradientButton";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import imgMockupLaptop from "@/assets/img_principal_mockup_laptop.png";
+import imgCarrossel1 from "@/assets/img_principal_carrossel_1.png";
+import imgCarrossel2 from "@/assets/img_principal_carrossel_2.png";
+import imgCarrossel3 from "@/assets/img_principal_carrossel_3.png";
+import imgCarrossel4 from "@/assets/img_principal_carrossel_4.png";
+import imgCarrossel5 from "@/assets/img_principal_carrossel_5.png";
+import imgCarrossel6 from "@/assets/img_principal_carrossel_6.png";
+import imgCarrossel7 from "@/assets/img_principal_carrossel_7.png";
+import imgCarrossel8 from "@/assets/img_principal_carrossel_8.png";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const portfolioItems = Array.from({ length: 12 }, (_, i) => ({
+  const portfolioImages = [
+    imgCarrossel1, imgCarrossel2, imgCarrossel3, imgCarrossel4,
+    imgCarrossel5, imgCarrossel6, imgCarrossel7, imgCarrossel8,
+    imgCarrossel1, imgCarrossel2, imgCarrossel3, imgCarrossel4
+  ];
+
+  const portfolioItems = portfolioImages.map((img, i) => ({
     id: i + 1,
-    image: `img_principal_carrossel_${i + 1}.png`,
+    image: img,
   }));
 
   const clientLogos = Array.from({ length: 9 }, (_, i) => ({
@@ -70,9 +85,7 @@ const Home = () => {
 
           <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl hover-glow">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                <span className="text-muted-foreground">img_principal_mockup_laptop.png</span>
-              </div>
+              <img src={imgMockupLaptop} alt="Mockup Laptop" className="w-full h-auto" />
             </div>
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 blur-3xl rounded-full"></div>
           </div>
@@ -98,11 +111,7 @@ const Home = () => {
                   key={item.id}
                   className="min-w-[calc(33.333%-1rem)] glass-card p-2 hover-scale hover-glow"
                 >
-                  <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center">
-                    <span className="text-sm text-muted-foreground text-center px-4">
-                      {item.image}
-                    </span>
-                  </div>
+                  <img src={item.image} alt={`Portfolio ${item.id}`} className="w-full h-full object-cover rounded-lg aspect-square" />
                 </div>
               ))}
             </div>

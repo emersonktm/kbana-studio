@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import logoKbana from "@/assets/Logo_kbana_home.png";
 
 const Header = () => {
   const location = useLocation();
@@ -25,9 +26,7 @@ const Header = () => {
       <nav className="container-custom py-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 hover-scale">
-            <div className="w-[92px] h-[75px] bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <span className="text-2xl font-bold text-white">KBANA</span>
-            </div>
+            <img src={logoKbana} alt="Kbana Design" className="w-[92px] h-[75px] object-contain" />
           </Link>
 
           <ul className="flex items-center gap-8">
