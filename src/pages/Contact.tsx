@@ -4,6 +4,10 @@ import BackToTop from "@/components/BackToTop";
 import GradientButton from "@/components/GradientButton";
 import { Instagram } from "lucide-react";
 import laptopMockup from "@/assets/img_principal_mockup_laptop.png";
+import portfolio1 from "@/assets/img_contato_portfolio_socialmedia_1.png";
+import portfolio2 from "@/assets/img_contato_portfolio_socialmedia_2.png";
+import portfolio3 from "@/assets/img_contato_portfolio_socialmedia_3.png";
+import portfolio4 from "@/assets/img_contato_portfolio_socialmedia_4.png";
 
 const Contact = () => {
   const handleWhatsAppClick = () => {
@@ -11,10 +15,10 @@ const Contact = () => {
   };
 
   const portfolioSamples = [
-    "img_contato_portfolio_socialmedia_1.png",
-    "img_contato_portfolio_socialmedia_2.png",
-    "img_contato_portfolio_socialmedia_3.png",
-    "img_contato_portfolio_socialmedia_4.png",
+    portfolio1,
+    portfolio2,
+    portfolio3,
+    portfolio4,
   ];
 
   return (
@@ -99,10 +103,12 @@ const Contact = () => {
                 key={index}
                 className="glass-card p-2 hover-scale hover-glow"
               >
-                <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded flex items-center justify-center">
-                  <span className="text-xs text-muted-foreground text-center px-2">
-                    {sample}
-                  </span>
+                <div className="aspect-square rounded overflow-hidden">
+                  <img
+                    src={sample}
+                    alt={`Portfolio social media ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             ))}
