@@ -15,6 +15,12 @@ import imgCarrossel9 from "@/assets/img_principal_carrossel_9.png";
 import imgCarrossel10 from "@/assets/img_principal_carrossel_10.png";
 import imgCarrossel11 from "@/assets/img_principal_carrossel_11.png";
 import imgCarrossel12 from "@/assets/img_principal_carrossel_12.png";
+import imgTrabalhos3d01 from "@/assets/img_trabalhos_3d_01.png";
+import imgTrabalhos3d02 from "@/assets/img_trabalhos_3d_02.png";
+import imgTrabalhos3d03 from "@/assets/img_trabalhos_3d_03.png";
+import imgTrabalhos3d04 from "@/assets/img_trabalhos_3d_04.png";
+import imgTrabalhos3d05 from "@/assets/img_trabalhos_3d_05.png";
+import imgTrabalhos3d06 from "@/assets/img_trabalhos_3d_06.png";
 
 const Services = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -33,9 +39,14 @@ const Services = () => {
     image: img,
   }));
 
-  const modelagem3DItems = Array.from({ length: 6 }, (_, i) => ({
+  const trabalhos3DImages = [
+    imgTrabalhos3d01, imgTrabalhos3d02, imgTrabalhos3d03,
+    imgTrabalhos3d04, imgTrabalhos3d05, imgTrabalhos3d06
+  ];
+
+  const modelagem3DItems = trabalhos3DImages.map((img, i) => ({
     id: i + 1,
-    image: `img_trabalhos_3d_0${i + 1}.png`,
+    image: img,
   }));
 
   const identityVisualItems = Array.from({ length: 3 }, (_, i) => ({
@@ -124,11 +135,11 @@ const Services = () => {
                     key={item.id}
                     className="min-w-[300px] glass-card p-4 hover-scale hover-glow"
                   >
-                    <div className="aspect-[3/4] bg-gradient-to-br from-primary/20 to-secondary/20 rounded flex items-center justify-center">
-                      <span className="text-xs text-muted-foreground text-center px-4">
-                        {item.image}
-                      </span>
-                    </div>
+                    <img
+                      src={item.image}
+                      alt={`Modelagem 3D ${item.id}`}
+                      className="w-full aspect-[3/4] object-cover rounded"
+                    />
                   </div>
                 ))}
               </div>
