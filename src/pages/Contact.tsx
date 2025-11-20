@@ -49,7 +49,7 @@ const Contact = () => {
           </div>
 
           <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="rounded-2xl overflow-hidden shadow-2xl hover-glow">
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src={laptopMockup}
                 alt="Mockup de laptop mostrando design"

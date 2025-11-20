@@ -106,7 +106,7 @@ const Home = () => {
           </div>
 
           <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl hover-glow">
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
               <img src={imgMockupLaptop} alt="Mockup Laptop" className="w-full h-auto" />
             </div>
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 blur-3xl rounded-full"></div>
@@ -191,7 +191,7 @@ const Home = () => {
             </div>
 
             <div className="relative">
-              <div className="aspect-[777/457] rounded-2xl overflow-hidden border border-white/20">
+              <div className="aspect-[777/457] rounded-2xl overflow-hidden">
                 <img src={mesaDigitalizadora} alt="Mesa Digitalizadora" className="w-full h-full object-cover" />
               </div>
             </div>
@@ -231,8 +231,8 @@ const Home = () => {
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden hover-glow">
-                <img src={imgQuemSouFotoPerfil} alt="Emerson Leite" className="w-full h-full object-cover" />
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+                <img src={imgQuemSouFotoPerfil} alt="Emerson Leite" className="w-full h-full object-contain" />
               </div>
               <div className="absolute -bottom-4 -right-4 text-4xl font-bold italic gradient-text">
                 Emerson Leite

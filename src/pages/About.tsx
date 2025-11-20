@@ -56,8 +56,8 @@ const About = () => {
           {/* Right Column - Photo */}
           <div className="relative animate-fade-in lg:sticky lg:top-32" style={{ animationDelay: "0.2s" }}>
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl hover-glow">
-                <img src={imgQuemSouFotoPerfil} alt="Emerson Leite" className="w-full h-full object-cover" />
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                <img src={imgQuemSouFotoPerfil} alt="Emerson Leite" className="w-full h-full object-contain" />
               </div>
 
               {/* Signature */}
