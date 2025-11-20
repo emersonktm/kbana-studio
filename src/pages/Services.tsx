@@ -21,6 +21,10 @@ import imgTrabalhos3d03 from "@/assets/img_trabalhos_3d_03.png";
 import imgTrabalhos3d04 from "@/assets/img_trabalhos_3d_04.png";
 import imgTrabalhos3d05 from "@/assets/img_trabalhos_3d_05.png";
 import imgTrabalhos3d06 from "@/assets/img_trabalhos_3d_06.png";
+import imgIdentidade1 from "@/assets/img_servicos_identidadevisual_1.png";
+import imgIdentidade2 from "@/assets/img_servicos_identidadevisual_2.png";
+import imgIdentidade3 from "@/assets/img_servicos_identidadevisual_3.png";
+import imgIdentidade4 from "@/assets/img_servicos_identidadevisual_4.png";
 
 const Services = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -49,9 +53,13 @@ const Services = () => {
     image: img,
   }));
 
-  const identityVisualItems = Array.from({ length: 3 }, (_, i) => ({
+  const identidadeVisualImages = [
+    imgIdentidade1, imgIdentidade2, imgIdentidade3, imgIdentidade4
+  ];
+
+  const identityVisualItems = identidadeVisualImages.map((img, i) => ({
     id: i + 1,
-    image: `img_servicos_identidadevisual_${i + 1}.png`,
+    image: img,
   }));
 
   const photoGallery = Array.from({ length: 30 }, (_, i) => ({
@@ -156,9 +164,11 @@ const Services = () => {
           <div className="space-y-6">
             {identityVisualItems.map((item) => (
               <div key={item.id} className="w-full">
-                <div className="aspect-[1285/498] bg-white rounded-2xl flex items-center justify-center shadow-2xl">
-                  <span className="text-sm text-gray-400">{item.image}</span>
-                </div>
+                <img
+                  src={item.image}
+                  alt={`Identidade Visual ${item.id}`}
+                  className="w-full aspect-[1285/498] object-cover rounded-2xl shadow-2xl"
+                />
               </div>
             ))}
           </div>
