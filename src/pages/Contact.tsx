@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import GradientButton from "@/components/GradientButton";
 import { Instagram } from "lucide-react";
+import laptopMockup from "@/assets/img_principal_mockup_laptop.png";
 
 const Contact = () => {
   const handleWhatsAppClick = () => {
@@ -44,10 +45,12 @@ const Contact = () => {
           </div>
 
           <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center shadow-2xl hover-glow">
-              <span className="text-muted-foreground text-center px-4">
-                img_contato_laptop_mockup.png
-              </span>
+            <div className="rounded-2xl overflow-hidden shadow-2xl hover-glow">
+              <img
+                src={laptopMockup}
+                alt="Mockup de laptop mostrando design"
+                className="w-full h-auto"
+              />
             </div>
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 blur-3xl rounded-full"></div>
           </div>
