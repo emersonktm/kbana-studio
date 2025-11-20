@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import imgCarrossel1 from "@/assets/img_principal_carrossel_1.png";
 import imgCarrossel2 from "@/assets/img_principal_carrossel_2.png";
 import imgCarrossel3 from "@/assets/img_principal_carrossel_3.png";
@@ -177,24 +179,34 @@ const Services = () => {
             />
           </div>
 
-          <div className="relative">
-            <div className="overflow-x-auto pb-6">
-              <div className="flex gap-6">
-                {modelagem3DItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className="min-w-[300px] glass-card p-4 hover-scale hover-glow"
-                  >
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent>
+              {modelagem3DItems.map((item) => (
+                <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="glass-card p-4 hover-scale hover-glow">
                     <img
                       src={item.image}
                       alt={`Modelagem 3D ${item.id}`}
-                      className="w-full aspect-[3/4] object-cover rounded"
+                      className="w-full aspect-[3/4] object-contain rounded"
                     />
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
         </section>
 
         {/* Visual Identity Section */}
