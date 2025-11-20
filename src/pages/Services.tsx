@@ -45,6 +45,16 @@ import galeriaAlbum17 from "@/assets/galeria_album_17.png";
 import galeriaAlbum18 from "@/assets/galeria_album_18.png";
 import galeriaAlbum19 from "@/assets/galeria_album_19.png";
 import galeriaAlbum20 from "@/assets/galeria_album_20.png";
+import galeriaAlbum21 from "@/assets/galeria_album_21.png";
+import galeriaAlbum22 from "@/assets/galeria_album_22.png";
+import galeriaAlbum23 from "@/assets/galeria_album_23.png";
+import galeriaAlbum24 from "@/assets/galeria_album_24.png";
+import galeriaAlbum25 from "@/assets/galeria_album_25.png";
+import galeriaAlbum26 from "@/assets/galeria_album_26.png";
+import galeriaAlbum27 from "@/assets/galeria_album_27.png";
+import galeriaAlbum28 from "@/assets/galeria_album_28.png";
+import galeriaAlbum29 from "@/assets/galeria_album_29.png";
+import galeriaAlbum30 from "@/assets/galeria_album_30.png";
 
 const Services = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -86,7 +96,9 @@ const Services = () => {
     galeriaAlbum01, galeriaAlbum02, galeriaAlbum03, galeriaAlbum04, galeriaAlbum05,
     galeriaAlbum06, galeriaAlbum07, galeriaAlbum08, galeriaAlbum09, galeriaAlbum10,
     galeriaAlbum11, galeriaAlbum12, galeriaAlbum13, galeriaAlbum14, galeriaAlbum15,
-    galeriaAlbum16, galeriaAlbum17, galeriaAlbum18, galeriaAlbum19, galeriaAlbum20
+    galeriaAlbum16, galeriaAlbum17, galeriaAlbum18, galeriaAlbum19, galeriaAlbum20,
+    galeriaAlbum21, galeriaAlbum22, galeriaAlbum23, galeriaAlbum24, galeriaAlbum25,
+    galeriaAlbum26, galeriaAlbum27, galeriaAlbum28, galeriaAlbum29, galeriaAlbum30
   ];
 
   const photoGallery = galeriaAlbumImages.map((img, i) => ({
