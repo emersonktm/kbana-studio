@@ -13,6 +13,10 @@ import imgCarrossel5 from "@/assets/img_principal_carrossel_5.png";
 import imgCarrossel6 from "@/assets/img_principal_carrossel_6.png";
 import imgCarrossel7 from "@/assets/img_principal_carrossel_7.png";
 import imgCarrossel8 from "@/assets/img_principal_carrossel_8.png";
+import imgCarrossel9 from "@/assets/img_principal_carrossel_9.png";
+import imgCarrossel10 from "@/assets/img_principal_carrossel_10.png";
+import imgCarrossel11 from "@/assets/img_principal_carrossel_11.png";
+import imgCarrossel12 from "@/assets/img_principal_carrossel_12.png";
 import mesaDigitalizadora from "@/assets/mesa_digitalizadora.png";
 import imgQuemSouFotoPerfil from "@/assets/img_quemsou_foto_perfil.png";
 import logo1 from "@/assets/Logo_1.png";
@@ -31,7 +35,7 @@ const Home = () => {
   const portfolioImages = [
     imgCarrossel1, imgCarrossel2, imgCarrossel3, imgCarrossel4,
     imgCarrossel5, imgCarrossel6, imgCarrossel7, imgCarrossel8,
-    imgCarrossel1, imgCarrossel2, imgCarrossel3, imgCarrossel4
+    imgCarrossel9, imgCarrossel10, imgCarrossel11, imgCarrossel12
   ];
 
   const portfolioItems = portfolioImages.map((img, i) => ({
