@@ -35,6 +35,16 @@ import galeriaAlbum07 from "@/assets/galeria_album_07.png";
 import galeriaAlbum08 from "@/assets/galeria_album_08.png";
 import galeriaAlbum09 from "@/assets/galeria_album_09.png";
 import galeriaAlbum10 from "@/assets/galeria_album_10.png";
+import galeriaAlbum11 from "@/assets/galeria_album_11.png";
+import galeriaAlbum12 from "@/assets/galeria_album_12.png";
+import galeriaAlbum13 from "@/assets/galeria_album_13.png";
+import galeriaAlbum14 from "@/assets/galeria_album_14.png";
+import galeriaAlbum15 from "@/assets/galeria_album_15.png";
+import galeriaAlbum16 from "@/assets/galeria_album_16.png";
+import galeriaAlbum17 from "@/assets/galeria_album_17.png";
+import galeriaAlbum18 from "@/assets/galeria_album_18.png";
+import galeriaAlbum19 from "@/assets/galeria_album_19.png";
+import galeriaAlbum20 from "@/assets/galeria_album_20.png";
 
 const Services = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -74,7 +84,9 @@ const Services = () => {
 
   const galeriaAlbumImages = [
     galeriaAlbum01, galeriaAlbum02, galeriaAlbum03, galeriaAlbum04, galeriaAlbum05,
-    galeriaAlbum06, galeriaAlbum07, galeriaAlbum08, galeriaAlbum09, galeriaAlbum10
+    galeriaAlbum06, galeriaAlbum07, galeriaAlbum08, galeriaAlbum09, galeriaAlbum10,
+    galeriaAlbum11, galeriaAlbum12, galeriaAlbum13, galeriaAlbum14, galeriaAlbum15,
+    galeriaAlbum16, galeriaAlbum17, galeriaAlbum18, galeriaAlbum19, galeriaAlbum20
   ];
 
   const photoGallery = galeriaAlbumImages.map((img, i) => ({
