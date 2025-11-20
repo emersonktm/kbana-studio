@@ -3,6 +3,18 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import imgCarrossel1 from "@/assets/img_principal_carrossel_1.png";
+import imgCarrossel2 from "@/assets/img_principal_carrossel_2.png";
+import imgCarrossel3 from "@/assets/img_principal_carrossel_3.png";
+import imgCarrossel4 from "@/assets/img_principal_carrossel_4.png";
+import imgCarrossel5 from "@/assets/img_principal_carrossel_5.png";
+import imgCarrossel6 from "@/assets/img_principal_carrossel_6.png";
+import imgCarrossel7 from "@/assets/img_principal_carrossel_7.png";
+import imgCarrossel8 from "@/assets/img_principal_carrossel_8.png";
+import imgCarrossel9 from "@/assets/img_principal_carrossel_9.png";
+import imgCarrossel10 from "@/assets/img_principal_carrossel_10.png";
+import imgCarrossel11 from "@/assets/img_principal_carrossel_11.png";
+import imgCarrossel12 from "@/assets/img_principal_carrossel_12.png";
 
 const Services = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -10,9 +22,15 @@ const Services = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState("");
 
-  const socialMediaItems = Array.from({ length: 12 }, (_, i) => ({
+  const carrosselImages = [
+    imgCarrossel1, imgCarrossel2, imgCarrossel3, imgCarrossel4,
+    imgCarrossel5, imgCarrossel6, imgCarrossel7, imgCarrossel8,
+    imgCarrossel9, imgCarrossel10, imgCarrossel11, imgCarrossel12
+  ];
+
+  const socialMediaItems = carrosselImages.map((img, i) => ({
     id: i + 1,
-    image: `img_principal_carrossel_${i + 1}.png`,
+    image: img,
   }));
 
   const modelagem3DItems = Array.from({ length: 6 }, (_, i) => ({
@@ -78,11 +96,11 @@ const Services = () => {
                 key={item.id}
                 className="glass-card p-2 hover-scale hover-glow cursor-pointer"
               >
-                <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded flex items-center justify-center">
-                  <span className="text-xs text-muted-foreground text-center px-2">
-                    {item.image}
-                  </span>
-                </div>
+                <img 
+                  src={item.image} 
+                  alt={`Social Media ${item.id}`}
+                  className="w-full h-full object-cover rounded"
+                />
               </div>
             ))}
           </div>
