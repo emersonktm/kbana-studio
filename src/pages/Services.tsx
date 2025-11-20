@@ -25,6 +25,16 @@ import imgIdentidade1 from "@/assets/img_servicos_identidadevisual_1.png";
 import imgIdentidade2 from "@/assets/img_servicos_identidadevisual_2.png";
 import imgIdentidade3 from "@/assets/img_servicos_identidadevisual_3.png";
 import imgIdentidade4 from "@/assets/img_servicos_identidadevisual_4.png";
+import galeriaAlbum01 from "@/assets/galeria_album_01.png";
+import galeriaAlbum02 from "@/assets/galeria_album_02.png";
+import galeriaAlbum03 from "@/assets/galeria_album_03.png";
+import galeriaAlbum04 from "@/assets/galeria_album_04.png";
+import galeriaAlbum05 from "@/assets/galeria_album_05.png";
+import galeriaAlbum06 from "@/assets/galeria_album_06.png";
+import galeriaAlbum07 from "@/assets/galeria_album_07.png";
+import galeriaAlbum08 from "@/assets/galeria_album_08.png";
+import galeriaAlbum09 from "@/assets/galeria_album_09.png";
+import galeriaAlbum10 from "@/assets/galeria_album_10.png";
 
 const Services = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -62,9 +72,14 @@ const Services = () => {
     image: img,
   }));
 
-  const photoGallery = Array.from({ length: 30 }, (_, i) => ({
+  const galeriaAlbumImages = [
+    galeriaAlbum01, galeriaAlbum02, galeriaAlbum03, galeriaAlbum04, galeriaAlbum05,
+    galeriaAlbum06, galeriaAlbum07, galeriaAlbum08, galeriaAlbum09, galeriaAlbum10
+  ];
+
+  const photoGallery = galeriaAlbumImages.map((img, i) => ({
     id: i + 1,
-    image: `galeria_album_${String(i + 1).padStart(2, "0")}.png`,
+    image: img,
   }));
 
   const videos = Array.from({ length: 14 }, (_, i) => ({
@@ -191,11 +206,11 @@ const Services = () => {
                 onClick={() => openLightbox(index)}
                 className="aspect-square glass-card p-2 hover-scale hover-glow cursor-pointer"
               >
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded flex items-center justify-center">
-                  <span className="text-[10px] text-muted-foreground text-center">
-                    {photo.image}
-                  </span>
-                </div>
+                <img
+                  src={photo.image}
+                  alt={`Foto ${photo.id}`}
+                  className="w-full h-full object-cover rounded"
+                />
               </div>
             ))}
           </div>
@@ -243,10 +258,12 @@ const Services = () => {
             <ChevronLeft className="w-6 h-6" />
           </button>
 
-          <div className="max-w-4xl w-full aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center">
-            <span className="text-muted-foreground">
-              {photoGallery[currentImage].image}
-            </span>
+          <div className="max-w-4xl w-full aspect-square bg-card rounded-2xl overflow-hidden flex items-center justify-center">
+            <img
+              src={photoGallery[currentImage].image}
+              alt={`Foto ${photoGallery[currentImage].id}`}
+              className="w-full h-full object-contain"
+            />
           </div>
 
           <button
