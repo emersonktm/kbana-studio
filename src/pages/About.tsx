@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import imgQuemSouFotoPerfil from "@/assets/img_quemsou_foto_perfil.png";
 
 const About = () => {
   return (
@@ -55,12 +56,8 @@ const About = () => {
           {/* Right Column - Photo */}
           <div className="relative animate-fade-in lg:sticky lg:top-32" style={{ animationDelay: "0.2s" }}>
             <div className="relative">
-              <div className="aspect-[4/5] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden shadow-2xl hover-glow">
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-muted-foreground text-center px-4">
-                    img_quemsou_foto_perfil.png
-                  </span>
-                </div>
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl hover-glow">
+                <img src={imgQuemSouFotoPerfil} alt="Emerson Leite" className="w-full h-full object-cover" />
               </div>
 
               {/* Signature */}

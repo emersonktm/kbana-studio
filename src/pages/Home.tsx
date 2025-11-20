@@ -14,6 +14,7 @@ import imgCarrossel6 from "@/assets/img_principal_carrossel_6.png";
 import imgCarrossel7 from "@/assets/img_principal_carrossel_7.png";
 import imgCarrossel8 from "@/assets/img_principal_carrossel_8.png";
 import mesaDigitalizadora from "@/assets/mesa_digitalizadora.png";
+import imgQuemSouFotoPerfil from "@/assets/img_quemsou_foto_perfil.png";
 import logo1 from "@/assets/Logo_1.png";
 import logo2 from "@/assets/Logo_2.png";
 import logo3 from "@/assets/Logo_3.png";
@@ -226,10 +227,8 @@ const Home = () => {
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/5] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center hover-glow">
-                <span className="text-muted-foreground text-center px-4">
-                  img_quemsou_foto_perfil.png
-                </span>
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden hover-glow">
+                <img src={imgQuemSouFotoPerfil} alt="Emerson Leite" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-4 -right-4 text-4xl font-bold italic gradient-text">
                 Emerson Leite
