@@ -55,6 +55,9 @@ import galeriaAlbum27 from "@/assets/galeria_album_27.png";
 import galeriaAlbum28 from "@/assets/galeria_album_28.png";
 import galeriaAlbum29 from "@/assets/galeria_album_29.png";
 import galeriaAlbum30 from "@/assets/galeria_album_30.png";
+import imgServicosSocialMediaThumb from "@/assets/img_servicos_socialmedia_thumb.png";
+import imgServicosModelagem3dThumb from "@/assets/img_servicos_modelagem3d_thumb.png";
+import imgServicosFotoThumb from "@/assets/img_servicos_foto_thumb.png";
 
 const Services = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -141,11 +144,11 @@ const Services = () => {
         {/* Social Media Section */}
         <section className="container-custom mb-32">
           <div className="relative mb-12">
-            <div className="h-[120px] bg-gradient-to-r from-primary via-[hsl(330,80%,60%)] to-secondary rounded-2xl flex items-center justify-center">
-              <h2 className="text-4xl font-bold text-white">
-                Trabalhos Desenvolvidos - Social Media
-              </h2>
-            </div>
+            <img 
+              src={imgServicosSocialMediaThumb} 
+              alt="Trabalhos Desenvolvidos - Social Media" 
+              className="w-full h-auto rounded-2xl"
+            />
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -167,11 +170,11 @@ const Services = () => {
         {/* 3D Modeling Section */}
         <section className="container-custom mb-32">
           <div className="relative mb-12">
-            <div className="h-[120px] bg-gradient-to-r from-primary via-[hsl(330,80%,60%)] to-secondary rounded-2xl flex items-center justify-center">
-              <h2 className="text-4xl font-bold text-white">
-                Trabalhos Desenvolvidos - Modelagem 3D
-              </h2>
-            </div>
+            <img 
+              src={imgServicosModelagem3dThumb} 
+              alt="Trabalhos Desenvolvidos - Modelagem 3D" 
+              className="w-full h-auto rounded-2xl"
+            />
           </div>
 
           <div className="relative">
@@ -216,11 +219,11 @@ const Services = () => {
         {/* Photo Gallery Section */}
         <section className="container-custom mb-32">
           <div className="relative mb-12">
-            <div className="h-[120px] bg-gradient-to-r from-primary via-[hsl(330,80%,60%)] to-secondary rounded-2xl flex items-center justify-center">
-              <h2 className="text-4xl font-bold text-white">
-                Trabalhos Desenvolvidos - Foto & Vídeo
-              </h2>
-            </div>
+            <img 
+              src={imgServicosFotoThumb} 
+              alt="Trabalhos Desenvolvidos - Foto & Vídeo" 
+              className="w-full h-auto rounded-2xl"
+            />
           </div>
 
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
