@@ -11,7 +11,7 @@ import portfolio4 from "@/assets/img_contato_portfolio_socialmedia_4.png";
 
 const Contact = () => {
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/5511999999999", "_blank");
+    window.open("https://wa.me/5562999289663", "_blank");
   };
 
   const portfolioSamples = [

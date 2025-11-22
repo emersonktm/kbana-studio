@@ -74,7 +74,7 @@ const Home = () => {
   };
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/5511999999999", "_blank");
+    window.open("https://wa.me/5562999289663", "_blank");
   };
 
   return (
