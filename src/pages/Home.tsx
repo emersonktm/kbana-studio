@@ -188,16 +188,16 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-card/30">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-5xl font-bold">
+              <h2 className="text-5xl font-bold text-[#0f0c1c]">
                 Me chama
                 <br />
                 no WhatsApp
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-[#0f0c1c]">
                 pra tirarmos mais dúvidas sobre o seu projeto!
               </p>
               <GradientButton onClick={handleWhatsAppClick}>
