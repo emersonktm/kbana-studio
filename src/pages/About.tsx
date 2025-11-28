@@ -2,10 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import imgQuemSouFotoPerfil from "@/assets/img_quemsou_foto_perfil.png";
-
 const About = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       <BackToTop />
 
@@ -54,16 +52,16 @@ const About = () => {
           </div>
 
           {/* Right Column - Photo */}
-          <div className="relative animate-fade-in lg:sticky lg:top-32" style={{ animationDelay: "0.2s" }}>
+          <div className="relative animate-fade-in lg:sticky lg:top-32" style={{
+          animationDelay: "0.2s"
+        }}>
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                 <img src={imgQuemSouFotoPerfil} alt="Emerson Leite" className="w-full h-full object-contain" />
               </div>
 
               {/* Signature */}
-              <div className="absolute -bottom-8 -right-8 text-5xl font-bold italic gradient-text">
-                Emerson Leite
-              </div>
+              
             </div>
 
             {/* Decorative glow effect */}
@@ -73,8 +71,6 @@ const About = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
