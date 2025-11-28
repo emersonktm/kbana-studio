@@ -28,57 +28,57 @@ import logo6 from "@/assets/Logo_6.png";
 import logo7 from "@/assets/Logo_7.png";
 import logo8 from "@/assets/Logo_8.png";
 import logo9 from "@/assets/Logo_9.png";
-
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const portfolioImages = [
-    imgCarrossel1, imgCarrossel2, imgCarrossel3, imgCarrossel4,
-    imgCarrossel5, imgCarrossel6, imgCarrossel7, imgCarrossel8,
-    imgCarrossel9, imgCarrossel10, imgCarrossel11, imgCarrossel12
-  ];
-
+  const portfolioImages = [imgCarrossel1, imgCarrossel2, imgCarrossel3, imgCarrossel4, imgCarrossel5, imgCarrossel6, imgCarrossel7, imgCarrossel8, imgCarrossel9, imgCarrossel10, imgCarrossel11, imgCarrossel12];
   const portfolioItems = portfolioImages.map((img, i) => ({
     id: i + 1,
-    image: img,
+    image: img
   }));
-
-  const clientLogos = [
-    { id: 1, image: logo1 },
-    { id: 2, image: logo2 },
-    { id: 3, image: logo3 },
-    { id: 4, image: logo4 },
-    { id: 5, image: logo5 },
-    { id: 6, image: logo6 },
-    { id: 7, image: logo7 },
-    { id: 8, image: logo8 },
-    { id: 9, image: logo9 },
-  ];
-
+  const clientLogos = [{
+    id: 1,
+    image: logo1
+  }, {
+    id: 2,
+    image: logo2
+  }, {
+    id: 3,
+    image: logo3
+  }, {
+    id: 4,
+    image: logo4
+  }, {
+    id: 5,
+    image: logo5
+  }, {
+    id: 6,
+    image: logo6
+  }, {
+    id: 7,
+    image: logo7
+  }, {
+    id: 8,
+    image: logo8
+  }, {
+    id: 9,
+    image: logo9
+  }];
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % (portfolioItems.length - 2));
+      setCurrentSlide(prev => (prev + 1) % (portfolioItems.length - 2));
     }, 3000);
-
     return () => clearInterval(interval);
   }, [portfolioItems.length]);
-
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % (portfolioItems.length - 2));
+    setCurrentSlide(prev => (prev + 1) % (portfolioItems.length - 2));
   };
-
   const prevSlide = () => {
-    setCurrentSlide((prev) =>
-      prev === 0 ? portfolioItems.length - 3 : prev - 1
-    );
+    setCurrentSlide(prev => prev === 0 ? portfolioItems.length - 3 : prev - 1);
   };
-
   const handleWhatsAppClick = () => {
     window.open("https://api.whatsapp.com/send?phone=5562999289663", "_blank", "noopener,noreferrer");
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       <BackToTop />
 
@@ -105,7 +105,9 @@ const Home = () => {
             </GradientButton>
           </div>
 
-          <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="relative animate-fade-in" style={{
+          animationDelay: "0.2s"
+        }}>
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
               <img src={imgMockupLaptop} alt="Mockup Laptop" className="w-full h-auto" />
             </div>
@@ -122,49 +124,27 @@ const Home = () => {
 
         <div className="relative">
           <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-500 ease-out gap-6"
-              style={{
-                transform: `translateX(-${currentSlide * (100 / 3)}%)`,
-              }}
-            >
-              {portfolioItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="min-w-[calc(33.333%-1rem)] glass-card p-2 hover-scale hover-glow"
-                >
+            <div className="flex transition-transform duration-500 ease-out gap-6" style={{
+            transform: `translateX(-${currentSlide * (100 / 3)}%)`
+          }}>
+              {portfolioItems.map(item => <div key={item.id} className="min-w-[calc(33.333%-1rem)] glass-card p-2 hover-scale hover-glow">
                   <img src={item.image} alt={`Portfolio ${item.id}`} className="w-full h-full object-cover rounded-lg aspect-square" />
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-background/80 backdrop-blur-lg border border-border flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300"
-          >
+          <button onClick={prevSlide} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-background/80 backdrop-blur-lg border border-border flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300">
             <ChevronLeft className="w-6 h-6" />
           </button>
 
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-background/80 backdrop-blur-lg border border-border flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300"
-          >
+          <button onClick={nextSlide} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-background/80 backdrop-blur-lg border border-border flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300">
             <ChevronRight className="w-6 h-6" />
           </button>
 
           <div className="flex justify-center gap-2 mt-8">
-            {Array.from({ length: portfolioItems.length - 2 }).map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentSlide(idx)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  idx === currentSlide
-                    ? "bg-primary w-8"
-                    : "bg-border hover:bg-primary/50"
-                }`}
-              />
-            ))}
+            {Array.from({
+            length: portfolioItems.length - 2
+          }).map((_, idx) => <button key={idx} onClick={() => setCurrentSlide(idx)} className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentSlide ? "bg-primary w-8" : "bg-border hover:bg-primary/50"}`} />)}
           </div>
         </div>
       </section>
@@ -200,14 +180,9 @@ const Home = () => {
 
         <div className="relative z-10 container-custom mt-12">
           <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-6">
-            {clientLogos.map((logo) => (
-              <div
-                key={logo.id}
-                className="glass-card p-6 flex items-center justify-center hover-scale hover-glow"
-              >
+            {clientLogos.map(logo => <div key={logo.id} className="glass-card p-6 flex items-center justify-center hover-scale hover-glow">
                 <img src={logo.image} alt={`Cliente ${logo.id}`} className="w-full h-[172px] object-contain" />
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -234,17 +209,13 @@ const Home = () => {
               <div className="aspect-[4/5] rounded-2xl overflow-hidden">
                 <img src={imgQuemSouFotoPerfil} alt="Emerson Leite" className="w-full h-full object-contain" />
               </div>
-              <div className="absolute -bottom-4 -right-4 text-4xl font-bold italic gradient-text">
-                Emerson Leite
-              </div>
+              
             </div>
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
