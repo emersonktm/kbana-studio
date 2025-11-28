@@ -74,7 +74,7 @@ const Home = () => {
   };
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/5562999289663", "_blank");
+    window.open("https://api.whatsapp.com/send?phone=5562999289663", "_blank", "noopener,noreferrer");
   };
 
   return (
