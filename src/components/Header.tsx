@@ -1,9 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link, UNSAFE_LocationContext } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
 import logoKbana from "@/assets/Logo_kbana_home.png";
 
 const Header = () => {
-  const location = useLocation();
+  const locationContext = useContext(UNSAFE_LocationContext);
+  const pathname = locationContext?.location?.pathname || window.location.pathname;
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,7 +16,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   return (
     <header
