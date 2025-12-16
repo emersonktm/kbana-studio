@@ -70,7 +70,7 @@ const Contact = () => {
 
           <div className="flex justify-center gap-8 mb-16">
             <a
-              href="https://instagram.com/kbanadodesign"
+              href="https://www.instagram.com/kbanadodesign"
               target="_blank"
               rel="noopener noreferrer"
               className="w-32 h-32 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center hover-scale hover-glow"
@@ -79,7 +79,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="https://behance.net/kbanadodesign"
+              href="https://www.behance.net/emersonleite1"
               target="_blank"
               rel="noopener noreferrer"
               className="w-32 h-32 rounded-2xl bg-blue-600 flex items-center justify-center hover-scale hover-glow"
@@ -88,7 +88,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="#"
+              href="https://www.designi.com.br/autor/58690"
               target="_blank"
               rel="noopener noreferrer"
               className="w-32 h-32 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center hover-scale hover-glow"
