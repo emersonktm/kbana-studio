@@ -76,7 +76,7 @@ const Home = () => {
     setCurrentSlide(prev => prev === 0 ? portfolioItems.length - 3 : prev - 1);
   };
   const handleWhatsAppClick = () => {
-    window.open("https://api.whatsapp.com/send?phone=5562999289663", "_blank", "noopener,noreferrer");
+    window.open("https://wa.me/5562999289663", "_blank", "noopener,noreferrer");
   };
   return <div className="min-h-screen bg-background">
       <Header />
