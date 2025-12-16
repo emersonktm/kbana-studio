@@ -56,16 +56,10 @@ const About = () => {
           animationDelay: "0.2s"
         }}>
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden">
                 <img src={imgQuemSouFotoPerfil} alt="Emerson Leite" className="w-full h-full object-contain" />
               </div>
-
-              {/* Signature */}
-              
             </div>
-
-            {/* Decorative glow effect */}
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 blur-3xl rounded-full"></div>
           </div>
         </div>
       </section>
