@@ -150,6 +150,18 @@ const Services = () => {
     setVideoModalOpen(true);
   };
 
+  const getYouTubeThumbnail = (url: string) => {
+    let videoId = "";
+    if (url.includes("youtu.be/")) {
+      videoId = url.split("youtu.be/")[1];
+    } else if (url.includes("shorts/")) {
+      videoId = url.split("shorts/")[1];
+    } else if (url.includes("watch?v=")) {
+      videoId = url.split("watch?v=")[1];
+    }
+    return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -275,12 +287,18 @@ const Services = () => {
               <div
                 key={video.id}
                 onClick={() => openVideo(video.url)}
-                className="aspect-square bg-secondary rounded-2xl flex flex-col items-center justify-center cursor-pointer hover-scale hover-glow group"
+                className="aspect-square rounded-2xl overflow-hidden cursor-pointer hover-scale hover-glow group relative"
               >
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-secondary border-b-[12px] border-b-transparent ml-1"></div>
+                <img
+                  src={getYouTubeThumbnail(video.url)}
+                  alt={video.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+                    <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-secondary border-b-[12px] border-b-transparent ml-1"></div>
+                  </div>
                 </div>
-                <span className="text-white font-bold">{video.title}</span>
               </div>
             ))}
           </div>
