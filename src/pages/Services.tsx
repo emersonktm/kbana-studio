@@ -111,11 +111,24 @@ const Services = () => {
     image: img,
   }));
 
-  const videos = Array.from({ length: 14 }, (_, i) => ({
-    id: i + 1,
-    title: `vídeo ${i + 1}`,
-    url: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
-  }));
+  const videos = [
+    { id: 1, title: "vídeo 1", url: "https://youtu.be/ylIiGbstnEQ" },
+    { id: 2, title: "vídeo 2", url: "https://youtu.be/FfAnMAM1yqw" },
+    { id: 3, title: "vídeo 3", url: "https://youtu.be/b7eG_c0bgno" },
+    { id: 4, title: "vídeo 4", url: "https://youtu.be/JEkvgjb1DY8" },
+    { id: 5, title: "vídeo 5", url: "https://youtu.be/CIuQwiwU49o" },
+    { id: 6, title: "vídeo 6", url: "https://youtu.be/ex75QNMsrbI" },
+    { id: 7, title: "vídeo 7", url: "https://youtu.be/K4lgniU26S8" },
+    { id: 8, title: "vídeo 8", url: "https://youtube.com/shorts/E0cvSgX38dw" },
+    { id: 9, title: "vídeo 9", url: "https://youtube.com/shorts/mlNR4-NWKA8" },
+    { id: 10, title: "vídeo 10", url: "https://youtube.com/shorts/z4cpmkDDLNU" },
+    { id: 11, title: "vídeo 11", url: "https://youtube.com/shorts/qCDR-K6KYT8" },
+    { id: 12, title: "vídeo 12", url: "https://youtube.com/shorts/J1EFAPxNMXc" },
+    { id: 13, title: "vídeo 13", url: "https://youtube.com/shorts/XUc72Ss437E" },
+    { id: 14, title: "vídeo 14", url: "https://youtube.com/shorts/JVAkZMWLLaM" },
+    { id: 15, title: "vídeo 15", url: "https://youtube.com/shorts/VuCt1HE9wgU" },
+    { id: 16, title: "vídeo 16", url: "https://youtube.com/shorts/xK0rVmYoG9k" },
+  ];
 
   const openLightbox = (index: number) => {
     setCurrentImage(index);
@@ -332,7 +345,10 @@ const Services = () => {
 
           <div className="max-w-4xl w-full aspect-video bg-card rounded-2xl overflow-hidden">
             <iframe
-              src={currentVideo.replace("watch?v=", "embed/")}
+              src={currentVideo
+                .replace("youtu.be/", "www.youtube.com/embed/")
+                .replace("youtube.com/shorts/", "www.youtube.com/embed/")
+                .replace("watch?v=", "embed/")}
               className="w-full h-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
