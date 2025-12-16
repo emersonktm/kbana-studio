@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 244 22% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 244 20% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 244 20% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 270 80% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 100% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 244 15% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 270 80% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 244 15% 20%;
+    --input: 244 15% 20%;
+    --ring: 270 80% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(270 80% 65%), hsl(330 80% 60%), hsl(30 100% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(270 80% 65% / 0.15), hsl(330 80% 60% / 0.15), hsl(30 100% 55% / 0.15));
+    --gradient-clients: linear-gradient(90deg, hsl(270 80% 65%), hsl(330 80% 60%), hsl(30 100% 55%));
+    
+    --shadow-glow: 0 0 40px hsl(270 80% 65% / 0.3);
+    --shadow-card: 0 10px 30px hsl(244 22% 7% / 0.5);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sora antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .container-custom {
+    @apply mx-auto px-4 md:px-[120px] max-w-[1920px];
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-[hsl(330,80%,60%)] to-secondary bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-card/30 backdrop-blur-lg border border-border/50 rounded-lg;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_20px_hsl(270,80%,65%,0.4)];
+  }
+}

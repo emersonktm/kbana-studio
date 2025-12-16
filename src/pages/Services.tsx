@@ -1,0 +1,383 @@
+import { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import imgCarrossel1 from "@/assets/img_principal_carrossel_1.png";
+import imgCarrossel2 from "@/assets/img_principal_carrossel_2.png";
+import imgCarrossel3 from "@/assets/img_principal_carrossel_3.png";
+import imgCarrossel4 from "@/assets/img_principal_carrossel_4.png";
+import imgCarrossel5 from "@/assets/img_principal_carrossel_5.png";
+import imgCarrossel6 from "@/assets/img_principal_carrossel_6.png";
+import imgCarrossel7 from "@/assets/img_principal_carrossel_7.png";
+import imgCarrossel8 from "@/assets/img_principal_carrossel_8.png";
+import imgCarrossel9 from "@/assets/img_principal_carrossel_9.png";
+import imgCarrossel10 from "@/assets/img_principal_carrossel_10.png";
+import imgCarrossel11 from "@/assets/img_principal_carrossel_11.png";
+import imgCarrossel12 from "@/assets/img_principal_carrossel_12.png";
+import imgTrabalhos3d01 from "@/assets/img_trabalhos_3d_01.png";
+import imgTrabalhos3d02 from "@/assets/img_trabalhos_3d_02.png";
+import imgTrabalhos3d03 from "@/assets/img_trabalhos_3d_03.png";
+import imgTrabalhos3d04 from "@/assets/img_trabalhos_3d_04.png";
+import imgTrabalhos3d05 from "@/assets/img_trabalhos_3d_05.png";
+import imgTrabalhos3d06 from "@/assets/img_trabalhos_3d_06.png";
+import imgIdentidade1 from "@/assets/img_servicos_identidadevisual_1.png";
+import imgIdentidade2 from "@/assets/img_servicos_identidadevisual_2.png";
+import imgIdentidade3 from "@/assets/img_servicos_identidadevisual_3.png";
+import imgIdentidade4 from "@/assets/img_servicos_identidadevisual_4.png";
+import galeriaAlbum01 from "@/assets/galeria_album_01.png";
+import galeriaAlbum02 from "@/assets/galeria_album_02.png";
+import galeriaAlbum03 from "@/assets/galeria_album_03.png";
+import galeriaAlbum04 from "@/assets/galeria_album_04.png";
+import galeriaAlbum05 from "@/assets/galeria_album_05.png";
+import galeriaAlbum06 from "@/assets/galeria_album_06.png";
+import galeriaAlbum07 from "@/assets/galeria_album_07.png";
+import galeriaAlbum08 from "@/assets/galeria_album_08.png";
+import galeriaAlbum09 from "@/assets/galeria_album_09.png";
+import galeriaAlbum10 from "@/assets/galeria_album_10.png";
+import galeriaAlbum11 from "@/assets/galeria_album_11.png";
+import galeriaAlbum12 from "@/assets/galeria_album_12.png";
+import galeriaAlbum13 from "@/assets/galeria_album_13.png";
+import galeriaAlbum14 from "@/assets/galeria_album_14.png";
+import galeriaAlbum15 from "@/assets/galeria_album_15.png";
+import galeriaAlbum16 from "@/assets/galeria_album_16.png";
+import galeriaAlbum17 from "@/assets/galeria_album_17.png";
+import galeriaAlbum18 from "@/assets/galeria_album_18.png";
+import galeriaAlbum19 from "@/assets/galeria_album_19.png";
+import galeriaAlbum20 from "@/assets/galeria_album_20.png";
+import galeriaAlbum21 from "@/assets/galeria_album_21.png";
+import galeriaAlbum22 from "@/assets/galeria_album_22.png";
+import galeriaAlbum23 from "@/assets/galeria_album_23.png";
+import galeriaAlbum24 from "@/assets/galeria_album_24.png";
+import galeriaAlbum25 from "@/assets/galeria_album_25.png";
+import galeriaAlbum26 from "@/assets/galeria_album_26.png";
+import galeriaAlbum27 from "@/assets/galeria_album_27.png";
+import galeriaAlbum28 from "@/assets/galeria_album_28.png";
+import galeriaAlbum29 from "@/assets/galeria_album_29.png";
+import galeriaAlbum30 from "@/assets/galeria_album_30.png";
+import imgServicosSocialMediaThumb from "@/assets/img_servicos_socialmedia_thumb.png";
+import imgServicosModelagem3dThumb from "@/assets/img_servicos_modelagem3d_thumb.png";
+import imgServicosFotoThumb from "@/assets/img_servicos_foto_thumb.png";
+
+const Services = () => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState("");
+
+  const carrosselImages = [
+    imgCarrossel1, imgCarrossel2, imgCarrossel3, imgCarrossel4,
+    imgCarrossel5, imgCarrossel6, imgCarrossel7, imgCarrossel8,
+    imgCarrossel9, imgCarrossel10, imgCarrossel11, imgCarrossel12
+  ];
+
+  const socialMediaItems = carrosselImages.map((img, i) => ({
+    id: i + 1,
+    image: img,
+  }));
+
+  const trabalhos3DImages = [
+    imgTrabalhos3d01, imgTrabalhos3d02, imgTrabalhos3d03,
+    imgTrabalhos3d04, imgTrabalhos3d05, imgTrabalhos3d06
+  ];
+
+  const modelagem3DItems = trabalhos3DImages.map((img, i) => ({
+    id: i + 1,
+    image: img,
+  }));
+
+  const identidadeVisualImages = [
+    imgIdentidade1, imgIdentidade2, imgIdentidade3, imgIdentidade4
+  ];
+
+  const identityVisualItems = identidadeVisualImages.map((img, i) => ({
+    id: i + 1,
+    image: img,
+  }));
+
+  const galeriaAlbumImages = [
+    galeriaAlbum01, galeriaAlbum02, galeriaAlbum03, galeriaAlbum04, galeriaAlbum05,
+    galeriaAlbum06, galeriaAlbum07, galeriaAlbum08, galeriaAlbum09, galeriaAlbum10,
+    galeriaAlbum11, galeriaAlbum12, galeriaAlbum13, galeriaAlbum14, galeriaAlbum15,
+    galeriaAlbum16, galeriaAlbum17, galeriaAlbum18, galeriaAlbum19, galeriaAlbum20,
+    galeriaAlbum21, galeriaAlbum22, galeriaAlbum23, galeriaAlbum24, galeriaAlbum25,
+    galeriaAlbum26, galeriaAlbum27, galeriaAlbum28, galeriaAlbum29, galeriaAlbum30
+  ];
+
+  const photoGallery = galeriaAlbumImages.map((img, i) => ({
+    id: i + 1,
+    image: img,
+  }));
+
+  const videos = [
+    { id: 1, title: "vídeo 1", url: "https://youtu.be/ylIiGbstnEQ" },
+    { id: 2, title: "vídeo 2", url: "https://youtu.be/FfAnMAM1yqw" },
+    { id: 3, title: "vídeo 3", url: "https://youtu.be/b7eG_c0bgno" },
+    { id: 4, title: "vídeo 4", url: "https://youtu.be/JEkvgjb1DY8" },
+    { id: 5, title: "vídeo 5", url: "https://youtu.be/CIuQwiwU49o" },
+    { id: 6, title: "vídeo 6", url: "https://youtu.be/ex75QNMsrbI" },
+    { id: 7, title: "vídeo 7", url: "https://youtu.be/K4lgniU26S8" },
+    { id: 8, title: "vídeo 8", url: "https://youtube.com/shorts/E0cvSgX38dw" },
+    { id: 9, title: "vídeo 9", url: "https://youtube.com/shorts/mlNR4-NWKA8" },
+    { id: 10, title: "vídeo 10", url: "https://youtube.com/shorts/z4cpmkDDLNU" },
+    { id: 11, title: "vídeo 11", url: "https://youtube.com/shorts/qCDR-K6KYT8" },
+    { id: 12, title: "vídeo 12", url: "https://youtube.com/shorts/J1EFAPxNMXc" },
+    { id: 13, title: "vídeo 13", url: "https://youtube.com/shorts/XUc72Ss437E" },
+    { id: 14, title: "vídeo 14", url: "https://youtube.com/shorts/JVAkZMWLLaM" },
+    { id: 15, title: "vídeo 15", url: "https://youtube.com/shorts/VuCt1HE9wgU" },
+    { id: 16, title: "vídeo 16", url: "https://youtube.com/shorts/xK0rVmYoG9k" },
+  ];
+
+  const openLightbox = (index: number) => {
+    setCurrentImage(index);
+    setLightboxOpen(true);
+  };
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % photoGallery.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) =>
+      prev === 0 ? photoGallery.length - 1 : prev - 1
+    );
+  };
+
+  const openVideo = (url: string) => {
+    setCurrentVideo(url);
+    setVideoModalOpen(true);
+  };
+
+  const getYouTubeThumbnail = (url: string) => {
+    let videoId = "";
+    if (url.includes("youtu.be/")) {
+      videoId = url.split("youtu.be/")[1];
+    } else if (url.includes("shorts/")) {
+      videoId = url.split("shorts/")[1];
+    } else if (url.includes("watch?v=")) {
+      videoId = url.split("watch?v=")[1];
+    }
+    return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <BackToTop />
+
+      <div className="pt-32 pb-20">
+        {/* Social Media Section */}
+        <section className="container-custom mb-32">
+          <div className="relative mb-12">
+            <img 
+              src={imgServicosSocialMediaThumb} 
+              alt="Trabalhos Desenvolvidos - Social Media" 
+              className="w-full h-auto rounded-2xl"
+            />
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {socialMediaItems.map((item) => (
+              <div
+                key={item.id}
+                className="glass-card p-2 hover-scale hover-glow cursor-pointer"
+              >
+                <img 
+                  src={item.image} 
+                  alt={`Social Media ${item.id}`}
+                  className="w-full h-full object-cover rounded"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 3D Modeling Section */}
+        <section className="container-custom mb-32">
+          <div className="relative mb-12">
+            <img 
+              src={imgServicosModelagem3dThumb} 
+              alt="Trabalhos Desenvolvidos - Modelagem 3D" 
+              className="w-full h-auto rounded-2xl"
+            />
+          </div>
+
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent>
+              {modelagem3DItems.map((item) => (
+                <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="glass-card p-4 hover-scale hover-glow">
+                    <img
+                      src={item.image}
+                      alt={`Modelagem 3D ${item.id}`}
+                      className="w-full aspect-[3/4] object-contain rounded"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
+        </section>
+
+        {/* Visual Identity Section */}
+        <section className="container-custom mb-32">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold gradient-text">Identidade Visual</h2>
+          </div>
+
+          <div className="space-y-6">
+            {identityVisualItems.map((item) => (
+              <div key={item.id} className="w-full">
+                <img
+                  src={item.image}
+                  alt={`Identidade Visual ${item.id}`}
+                  className="w-full aspect-[1285/498] object-cover rounded-2xl shadow-2xl"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Photo Gallery Section */}
+        <section className="container-custom mb-32">
+          <div className="relative mb-12">
+            <img 
+              src={imgServicosFotoThumb} 
+              alt="Trabalhos Desenvolvidos - Foto & Vídeo" 
+              className="w-full h-auto rounded-2xl"
+            />
+          </div>
+
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {photoGallery.map((photo, index) => (
+              <div
+                key={photo.id}
+                onClick={() => openLightbox(index)}
+                className="aspect-square glass-card p-2 hover-scale hover-glow cursor-pointer"
+              >
+                <img
+                  src={photo.image}
+                  alt={`Foto ${photo.id}`}
+                  className="w-full h-full object-cover rounded"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Video Gallery Section */}
+        <section className="container-custom">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {videos.map((video) => (
+              <div
+                key={video.id}
+                onClick={() => openVideo(video.url)}
+                className="aspect-square rounded-2xl overflow-hidden cursor-pointer hover-scale hover-glow group relative"
+              >
+                <img
+                  src={getYouTubeThumbnail(video.url)}
+                  alt={video.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+                    <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-secondary border-b-[12px] border-b-transparent ml-1"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      {/* Lightbox Modal */}
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 bg-background/95 z-50 flex items-center justify-center p-4"
+          onClick={() => setLightboxOpen(false)}
+        >
+          <button
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-card flex items-center justify-center hover:bg-primary transition-colors"
+            onClick={() => setLightboxOpen(false)}
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          <button
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-card flex items-center justify-center hover:bg-primary transition-colors"
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <div className="max-w-4xl w-full aspect-square bg-card rounded-2xl overflow-hidden flex items-center justify-center">
+            <img
+              src={photoGallery[currentImage].image}
+              alt={`Foto ${photoGallery[currentImage].id}`}
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <button
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-card flex items-center justify-center hover:bg-primary transition-colors"
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+      )}
+
+      {/* Video Modal */}
+      {videoModalOpen && (
+        <div
+          className="fixed inset-0 bg-background/95 z-50 flex items-center justify-center p-4"
+          onClick={() => setVideoModalOpen(false)}
+        >
+          <button
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-card flex items-center justify-center hover:bg-primary transition-colors"
+            onClick={() => setVideoModalOpen(false)}
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          <div className="max-w-4xl w-full aspect-video bg-card rounded-2xl overflow-hidden">
+            <iframe
+              src={currentVideo
+                .replace("youtu.be/", "www.youtube.com/embed/")
+                .replace("youtube.com/shorts/", "www.youtube.com/embed/")
+                .replace("watch?v=", "embed/")}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Services;
