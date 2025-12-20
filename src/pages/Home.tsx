@@ -90,7 +90,7 @@ const Home = () => {
               <span className="hidden md:inline">Dando <span className="text-secondary">vida a</span></span>
               <span className="md:hidden">Dando <span className="text-secondary">vida</span></span>
               <br />
-              <span className="md:hidden text-secondary">a </span><span className="gradient-text">suas artes</span>
+              <span className="gradient-text"><span className="md:hidden">a suas </span><span className="hidden md:inline">suas </span>artes</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
               Com mais de 10 anos transformando ideias em impacto visual, ofereço
@@ -151,23 +151,51 @@ const Home = () => {
 
       {/* Clients Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-[hsl(330,80%,60%)] to-secondary opacity-100 h-[240px]"></div>
-        
         <div className="relative z-10 container-custom">
-          <h2 className="text-5xl font-bold mb-12 text-white">
-            Nossos <span className="text-background">Clientes</span>
-          </h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 text-white">
-              <p className="text-xl leading-relaxed">
-                Se você quer elevar o visual da sua marca, produto ou negócio,{" "}
-                <span className="font-bold">o momento é agora!</span>
-              </p>
-              <p className="text-lg">
-                <span className="font-bold">confira alguns de nossos clientes</span>{" "}
-                que já passaram por aqui.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+            {/* Text Content with Modern Tech Design */}
+            <div className="relative">
+              {/* Decorative tech elements */}
+              <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-primary via-secondary to-transparent rounded-full"></div>
+              <div className="absolute -left-8 top-0 w-px h-24 bg-gradient-to-b from-primary/50 to-transparent"></div>
+              <div className="absolute -left-6 top-0 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+              
+              <div className="pl-6 space-y-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex gap-1">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                    <div className="w-2 h-2 bg-primary/50 rounded-full"></div>
+                  </div>
+                  <div className="h-px flex-1 bg-gradient-to-r from-primary/50 to-transparent"></div>
+                </div>
+                
+                <h2 className="text-5xl font-bold">
+                  Nossos <span className="gradient-text">Clientes</span>
+                </h2>
+                
+                <div className="relative">
+                  <div className="absolute -left-6 top-0 bottom-0 w-px bg-gradient-to-b from-border via-primary/30 to-border"></div>
+                  <p className="text-xl leading-relaxed text-foreground/90">
+                    Se você quer elevar o visual da sua marca, produto ou negócio,{" "}
+                    <span className="font-bold text-foreground">o momento é agora!</span>
+                  </p>
+                </div>
+                
+                <p className="text-lg text-muted-foreground">
+                  <span className="font-bold text-foreground">confira alguns de nossos clientes</span>{" "}
+                  que já passaram por aqui.
+                </p>
+                
+                <div className="flex items-center gap-3 pt-4">
+                  <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-transparent via-border to-primary/30"></div>
+                  <div className="flex gap-1.5">
+                    <div className="w-1.5 h-1.5 bg-border rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-primary/50 rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-secondary/50 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="relative">
