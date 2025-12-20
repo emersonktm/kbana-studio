@@ -87,9 +87,10 @@ const Home = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
             <h1 className="text-6xl lg:text-7xl font-bold">
-              Dando <span className="text-secondary">vida a</span>
+              <span className="hidden md:inline">Dando <span className="text-secondary">vida a</span></span>
+              <span className="md:hidden">Dando <span className="text-secondary">vida</span></span>
               <br />
-              <span className="gradient-text">suas artes</span>
+              <span className="md:hidden text-secondary">a </span><span className="gradient-text">suas artes</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
               Com mais de 10 anos transformando ideias em impacto visual, ofereço
@@ -178,9 +179,9 @@ const Home = () => {
         </div>
 
         <div className="relative z-10 container-custom mt-12">
-          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-6">
-            {clientLogos.map(logo => <div key={logo.id} className="glass-card p-6 flex items-center justify-center hover-scale hover-glow">
-                <img src={logo.image} alt={`Cliente ${logo.id}`} className="w-full h-[172px] object-contain" />
+          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-6">
+            {clientLogos.map(logo => <div key={logo.id} className="glass-card p-2 md:p-6 flex items-center justify-center hover-scale hover-glow">
+                <img src={logo.image} alt={`Cliente ${logo.id}`} className="w-full h-[80px] md:h-[172px] object-contain" />
               </div>)}
           </div>
         </div>
