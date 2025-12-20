@@ -90,7 +90,7 @@ const Home = () => {
               <span className="hidden md:inline">Dando <span className="text-secondary">vida a</span></span>
               <span className="md:hidden">Dando <span className="text-secondary">vida</span></span>
               <br />
-              <span className="gradient-text"><span className="md:hidden">a suas </span><span className="hidden md:inline">suas </span>artes</span>
+              <span className="gradient-text"><span className="md:hidden">a suas </span><span className="hidden md:inline">suas </span>seu projeto</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
               Com mais de 10 anos transformando ideias em impacto visual, ofereço
