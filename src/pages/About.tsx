@@ -43,11 +43,7 @@ const About = () => {
                 você." (Salmos 128:2)
               </blockquote>
 
-              <p>
-                Estou sempre em busca constante de aprimoramento para oferecer sempre o
-                melhor aos seus clientes, prezando pelo respeito, dedicação e zelo em
-                cada entrega.
-              </p>
+              <p>Estou sempre em busca constante de aprimoramento para oferecer sempre o melhor aos meus clientes, prezando pelo respeito, dedicação e zelo em cada entrega.</p>
             </div>
           </div>
 
